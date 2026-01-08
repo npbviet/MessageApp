@@ -8,7 +8,6 @@ type Props = {
   selectedIds: Set<number>;
   onSelect: (id: number) => void;
   onSelectAll: () => void;
-  onDownload: (id: number) => void;
   selectedCount: number;
   onActivityHistory: () => void;
   onDownloadAll: () => void;
@@ -22,7 +21,6 @@ export default function AttachmentsTable({
   selectedIds,
   onSelect,
   onSelectAll,
-  onDownload,
   selectedCount,
   onActivityHistory,
   onDownloadAll,
@@ -137,7 +135,6 @@ export default function AttachmentsTable({
                     attachment={file}
                     isSelected={selectedIds.has(file.id)}
                     onSelect={onSelect}
-                    onDownload={onDownload}
                   />
                 ))}
               </Fragment>

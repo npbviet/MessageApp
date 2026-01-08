@@ -28,14 +28,6 @@ export default function AttachmentsPage() {
     }
   }, [attachments, selectedIds.size]);
 
-  const handleDownload = useCallback((id: number) => {
-    const attachment = attachments.find((a) => a.id === id);
-    if (attachment) {
-      console.log(`Downloading: ${attachment.name}`);
-      alert(`Mock download: ${attachment.name}`);
-    }
-  }, [attachments]);
-
   const handleDownloadAll = useCallback(() => {
     if (attachments.length === 0) {
       alert("No files to download");
@@ -119,7 +111,6 @@ export default function AttachmentsPage() {
           selectedIds={selectedIds}
           onSelect={handleSelect}
           onSelectAll={handleSelectAll}
-          onDownload={handleDownload}
           selectedCount={selectedIds.size}
           onActivityHistory={handleActivityHistory}
           onDownloadAll={handleDownloadAll}

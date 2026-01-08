@@ -7,14 +7,12 @@ type Props = {
   attachment: AttachmentFile;
   isSelected: boolean;
   onSelect: (id: number) => void;
-  onDownload: (id: number) => void;
 };
 
 export default function AttachmentRow({
   attachment,
   isSelected,
   onSelect,
-  onDownload,
 }: Props) {
   return (
     <tr

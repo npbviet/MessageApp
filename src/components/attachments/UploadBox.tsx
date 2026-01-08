@@ -1,11 +1,11 @@
-import { useState, useRef, DragEvent, ChangeEvent } from "react";
+import { useState, useRef } from "react";
+import type { DragEvent, ChangeEvent } from "react";
 import { FiUpload, FiX } from "react-icons/fi";
 import type { FileValidationError, FileUploadConfig } from "../../types/attachment";
 
 type Props = {
   onUpload: (files: File[]) => void;
   config?: FileUploadConfig;
-  maxFiles?: number;
 };
 
 const DEFAULT_CONFIG: FileUploadConfig = {
@@ -16,7 +16,6 @@ const DEFAULT_CONFIG: FileUploadConfig = {
 export default function UploadBox({
   onUpload,
   config = DEFAULT_CONFIG,
-  maxFiles = 50,
 }: Props) {
   const [isDragging, setIsDragging] = useState(false);
   const [errors, setErrors] = useState<FileValidationError[]>([]);
